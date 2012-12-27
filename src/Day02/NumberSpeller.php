@@ -54,14 +54,14 @@ class NumberSpeller
             return $this->spellBasicNumber($number);
         }
 
-        $reminder = $number % 10;
-        $base = intval($number - $reminder);
+        $remainder = $number % 10;
+        $base = intval($number - $remainder);
 
         if ($base < 20) {
-            return $this->spellBasicNumber($reminder).'teen';
+            return $this->spellBasicNumber($remainder).'teen';
         }
 
-        return $this->spellBasicNumber($base).' '.$this->spellBasicNumber($reminder);
+        return $this->spellBasicNumber($base).' '.$this->spellBasicNumber($remainder);
     }
 
     private function spellHundredsAndOver($number)
@@ -69,19 +69,19 @@ class NumberSpeller
         $divisor = $this->findDivisor($number);
         $quotient = intval($number / $divisor);
 
-        return $this->spell($quotient).' '.$this->spellBasicNumber($divisor).$this->spellReminder($number, $divisor);
+        return $this->spell($quotient).' '.$this->spellBasicNumber($divisor).$this->spellRemainder($number, $divisor);
     }
 
-    private function spellReminder($number, $divisor)
+    private function spellRemainder($number, $divisor)
     {
-        $reminder = $number % $divisor;
+        $remainder = $number % $divisor;
 
-        if ($reminder <= 0) {
+        if ($remainder <= 0) {
             return '';
-        } elseif ($reminder < 100) {
-            return ' and '.$this->spell($reminder);
+        } elseif ($remainder < 100) {
+            return ' and '.$this->spell($remainder);
         } else {
-            return ', '.$this->spell($reminder);
+            return ', '.$this->spell($remainder);
         }
     }
 
