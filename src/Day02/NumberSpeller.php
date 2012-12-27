@@ -31,7 +31,7 @@ class NumberSpeller
         90 => 'ninety',
         100 => 'hundred',
         1000 => 'thousand',
-        1000000 => 'milion'
+        1000000 => 'million'
     );
 
     public function spell($number)
