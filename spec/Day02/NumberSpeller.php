@@ -93,21 +93,21 @@ class NumberSpeller extends ObjectBehavior
         }
     }
 
-    function it_should_spell_milions()
+    function it_should_spell_millions()
     {
         $numbers = array(
-            1000000 => 'one milion',
-            1000001 => 'one milion and one',
-            1000021 => 'one milion and twenty one',
-            1000321 => 'one milion, three hundred and twenty one',
-            1004321 => 'one milion, four thousand, three hundred and twenty one',
-            1054321 => 'one milion, fifty four thousand, three hundred and twenty one',
-            1654321 => 'one milion, six hundred and fifty four thousand, three hundred and twenty one',
-            71654321 => 'seventy one milion, six hundred and fifty four thousand, three hundred and twenty one',
-            871654321 => 'eight hundred and seventy one milion, six hundred and fifty four thousand, three hundred and twenty one',
-            871654000 => 'eight hundred and seventy one milion, six hundred and fifty four thousand',
-            871650000 => 'eight hundred and seventy one milion, six hundred and fifty thousand',
-            871600000 => 'eight hundred and seventy one milion, six hundred thousand',
+            1000000 => 'one million',
+            1000001 => 'one million and one',
+            1000021 => 'one million and twenty one',
+            1000321 => 'one million, three hundred and twenty one',
+            1004321 => 'one million, four thousand, three hundred and twenty one',
+            1054321 => 'one million, fifty four thousand, three hundred and twenty one',
+            1654321 => 'one million, six hundred and fifty four thousand, three hundred and twenty one',
+            71654321 => 'seventy one million, six hundred and fifty four thousand, three hundred and twenty one',
+            871654321 => 'eight hundred and seventy one million, six hundred and fifty four thousand, three hundred and twenty one',
+            871654000 => 'eight hundred and seventy one million, six hundred and fifty four thousand',
+            871650000 => 'eight hundred and seventy one million, six hundred and fifty thousand',
+            871600000 => 'eight hundred and seventy one million, six hundred thousand',
         );
 
         foreach($numbers as $number => $word) {
