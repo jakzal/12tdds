@@ -15,13 +15,13 @@ Installation
 
 2. Install the dependencies
 
-```
-curl http://getcomposer.org/installer | php
-./composer.phar install --dev
-```
+    ```
+    curl http://getcomposer.org/installer | php
+    ./composer.phar install --dev
+    ```
 
 3. Run all the specs (previously known as tests):
 
-```
-./bin/phpspec run -f pretty
-```
+    ```
+    ./bin/phpspec run -f pretty
+    ```
