@@ -1,0 +1,10 @@
+{
+    "require-dev": {
+        "phpspec/phpspec2": "dev-master@dev",
+        "phpspec/php-diff": "*@dev"
+    },
+    "autoload": {"psr-0": {"": "src"}},
+    "config": {
+        "bin-dir": "bin"
+    }
+}
