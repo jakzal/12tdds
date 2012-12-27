@@ -1,7 +1,7 @@
 12 TDDS OF CHRISTMAS
 ====================
 
-[![Build Status](https://secure.travis-ci.org/jakzal/12tdds.png?branch=master)](http://travis-ci.org/jakzal/12tdds)
+[![Build Status](https://secure.travis-ci.org/jakzal/12tdds.png)](http://travis-ci.org/jakzal/12tdds)
 
 As part of my deliberate practice I decided to accept the challenge
 by John Cleary and practice one code kata a day for the next twelve days.
@@ -15,13 +15,13 @@ Installation
 
 2. Install the dependencies
 
-```
-curl http://getcomposer.org/installer | php
-./composer.phar install --dev
-```
+    ```
+    curl http://getcomposer.org/installer | php
+    ./composer.phar install --dev
+    ```
 
 3. Run all the specs (previously known as tests):
 
-```
-./bin/phpspec run -f pretty
-```
+    ```
+    ./bin/phpspec run -f pretty
+    ```
