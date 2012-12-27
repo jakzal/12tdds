@@ -28,29 +28,19 @@ class NumberSpeller
         60 => 'sixty',
         70 => 'seventy',
         80 => 'eighty',
-        90 => 'ninety'
+        90 => 'ninety',
+        100 => 'hundred',
+        1000 => 'thousand',
+        1000000 => 'milion'
     );
 
     public function spell($number)
     {
-        if ($this->isBasicNumber($number)) {
-            return $this->spellBasicNumber($number);
-        }
-
         if ($number < 100) {
-            return $this->spellTens($number);
-        } elseif ($number < 1000) {
-            return $this->spellHundreds($number);
-        } elseif ($number < 1000000) {
-            return $this->spellThousands($number);
-        } else {
-            return $this->spellMilions($number);
+            return $this->spellTensAndBelow($number);
         }
-    }
 
-    private function isBasicNumber($number)
-    {
-        return array_key_exists($number, $this->basicNumbers);
+        return $this->spellHundredsAndOver($number);
     }
 
     private function spellBasicNumber($number)
@@ -58,8 +48,12 @@ class NumberSpeller
         return $this->basicNumbers[$number];
     }
 
-    private function spellTens($number)
+    private function spellTensAndBelow($number)
     {
+        if ($this->isBasicNumber($number)) {
+            return $this->spellBasicNumber($number);
+        }
+
         $reminder = $number % 10;
         $base = intval($number - $reminder);
 
@@ -70,51 +64,44 @@ class NumberSpeller
         return $this->spellBasicNumber($base).' '.$this->spellBasicNumber($reminder);
     }
 
-    private function spellHundreds($number)
+    private function spellHundredsAndOver($number)
     {
-        $reminder = $number % 100;
-        $quotient = intval($number / 100);
+        $divisor = $this->findDivisor($number);
+        $quotient = intval($number / $divisor);
 
-        if ($reminder == 0) {
-            return $this->spellBasicNumber($quotient).' hundred';
+        return $this->spell($quotient).' '.$this->spellBasicNumber($divisor).$this->spellReminder($number, $divisor);
+    }
+
+    private function spellReminder($number, $divisor)
+    {
+        $reminder = $number % $divisor;
+
+        if ($reminder <= 0) {
+            return '';
+        } elseif ($reminder < 100) {
+            return ' and '.$this->spell($reminder);
         } else {
-            return $this->spellBasicNumber($quotient).' hundred and '.$this->spell($reminder);
+            return ', '.$this->spell($reminder);
         }
     }
 
-    private function spellThousands($number)
+    private function isBasicNumber($number)
     {
-        $reminder = $number % 1000;
-        $quotient = intval($number / 1000);
-
-        $result = $this->spell($quotient).' thousand';
-
-        if ($reminder > 0) {
-            if ($reminder < 100) {
-                $result.= ' and '.$this->spell($reminder);
-            } else {
-                $result.= ', '.$this->spell($reminder);
-            }
-        }
-
-        return $result;
+        return array_key_exists($number, $this->basicNumbers);
     }
 
-    private function spellMilions($number)
+    private function findDivisor($number)
     {
-        $reminder = $number % 1000000;
-        $quotient = intval($number / 1000000);
-
-        $result = $this->spell($quotient).' milion';
-
-        if ($reminder > 0) {
-            if ($reminder < 100) {
-                $result.= ' and '.$this->spell($reminder);
-            } else {
-                $result.= ', '.$this->spell($reminder);
-            }
+        if ($number < 10) {
+            return 1;
+        } elseif ($number < 100) {
+            return 10;
+        } elseif ($number < 1000) {
+            return 100;
+        } elseif ($number < 1000000) {
+            return 1000;
+        } else {
+            return 1000000;
         }
-
-        return $result;
     }
 }
