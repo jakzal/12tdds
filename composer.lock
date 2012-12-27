@@ -1,5 +1,5 @@
 {
-    "hash": "c904560510a98eea8a574bf205850318",
+    "hash": "4221c12bd33fc3bb23bc95fb44adbf08",
     "packages": [
 
     ],
@@ -94,31 +94,37 @@
         },
         {
             "name": "phpspec/phpspec2",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec2.git",
-                "reference": "4eb75390b81363664d9e7519631cdb87c79fe23b"
+                "reference": "a97b6adbb0ab85d9b9cdd1d242e140302860cfed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/phpspec/phpspec2/archive/4eb75390b81363664d9e7519631cdb87c79fe23b.zip",
-                "reference": "4eb75390b81363664d9e7519631cdb87c79fe23b",
+                "url": "https://github.com/phpspec/phpspec2/archive/a97b6adbb0ab85d9b9cdd1d242e140302860cfed.zip",
+                "reference": "a97b6adbb0ab85d9b9cdd1d242e140302860cfed",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.1",
                 "mockery/mockery": "0.7.*",
-                "symfony/console": ">=2.1.0,<2.2.0",
-                "symfony/event-dispatcher": ">=2.1.0,<2.2.0",
-                "symfony/finder": ">=2.1.0,<2.2.0",
-                "phpspec/php-diff": "*@dev"
+                "phpspec/php-diff": "*@dev",
+                "php": ">=5.3.3",
+                "symfony/console": ">=2.1,<3.0",
+                "symfony/event-dispatcher": ">=2.1,<3.0",
+                "symfony/finder": ">=2.1,<3.0",
+                "symfony/yaml": ">=2.1,<3.0"
             },
-            "time": "2012-10-31 15:46:10",
+            "time": "2012-12-18 09:55:12",
             "bin": [
                 "bin/phpspec"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "1.0.x-dev"
+                }
+            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -140,12 +146,14 @@
                     "homepage": "http://marcelloduarte.net/"
                 }
             ],
-            "description": "Specification-oriented BDD framework for PHP 5.4",
+            "description": "Specification-oriented BDD framework for PHP 5.3+",
             "homepage": "http://phpspec.net/",
             "keywords": [
+                "testing",
                 "BDD",
                 "TDD",
                 "spec",
+                "tests",
                 "SpecBDD",
                 "specification"
             ]
@@ -284,6 +292,49 @@
                 }
             ],
             "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.1.6",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml",
+                "reference": "v2.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Yaml/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-12-06 10:00:55",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com"
         }
     ],

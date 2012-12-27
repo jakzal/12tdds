@@ -1,6 +1,6 @@
 {
     "require-dev": {
-        "phpspec/phpspec2": "dev-master@dev",
+        "phpspec/phpspec2": "dev-develop@dev",
         "phpspec/php-diff": "*@dev"
     },
     "autoload": {"psr-0": {"": "src"}},
