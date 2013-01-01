@@ -4,7 +4,7 @@ namespace Day07;
 
 class TemplateEngine
 {
-    public function evaluate($template, $variableMap)
+    public function evaluate($template, VariableMap $variableMap)
     {
         return preg_replace_callback(
             '/\{\$(?P<variable>[^}]+)}/',
