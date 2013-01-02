@@ -26,7 +26,7 @@ class IntegerRange extends ObjectBehavior
     {
         $this->beConstructedWith(0, 3);
 
-        $range = $this->intersect(new \Day08\IntegerRange(2, 4));
+        $range = $this->intersect($this->createRange(2, 4));
 
         $range->shouldBeAnInstanceOf('Day08\IntegerRange');
         $range->getLowestNumber()->shouldReturn(2);
@@ -37,7 +37,7 @@ class IntegerRange extends ObjectBehavior
     {
         $this->beConstructedWith(0, 3);
 
-        $range = $this->intersect(new \Day08\IntegerRange(3, 4));
+        $range = $this->intersect($this->createRange(3, 4));
 
         $range->shouldBeAnInstanceOf('Day08\IntegerRange');
         $range->getLowestNumber()->shouldReturn(3);
@@ -48,7 +48,7 @@ class IntegerRange extends ObjectBehavior
     {
         $this->beConstructedWith(0, 3);
 
-        $range = $this->intersect(new \Day08\IntegerRange(4, 5))->shouldReturn(null);
+        $range = $this->intersect($this->createRange(4, 5))->shouldReturn(null);
     }
 
     function it_should_throw_exception_if_lowest_number_is_higher_than_highest()
@@ -64,5 +64,10 @@ class IntegerRange extends ObjectBehavior
 
         $this->shouldThrow($exception)->during('__construct', array(1.3, 3));
         $this->shouldThrow($exception)->during('__construct', array(1, 3.33));
+    }
+
+    private function createRange($lowestNumber, $highestNumber)
+    {
+        return new \Day08\IntegerRange($lowestNumber, $highestNumber);
     }
 }
