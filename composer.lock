@@ -98,12 +98,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec2.git",
-                "reference": "a97b6adbb0ab85d9b9cdd1d242e140302860cfed"
+                "reference": "addcda7f3e2b339a54ff0a3d13859cd500702249"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/phpspec/phpspec2/archive/a97b6adbb0ab85d9b9cdd1d242e140302860cfed.zip",
-                "reference": "a97b6adbb0ab85d9b9cdd1d242e140302860cfed",
+                "url": "https://github.com/phpspec/phpspec2/archive/addcda7f3e2b339a54ff0a3d13859cd500702249.zip",
+                "reference": "addcda7f3e2b339a54ff0a3d13859cd500702249",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
                 "symfony/finder": ">=2.1,<3.0",
                 "symfony/yaml": ">=2.1,<3.0"
             },
-            "time": "2012-12-18 09:55:12",
+            "time": "2013-01-02 22:11:19",
             "bin": [
                 "bin/phpspec"
             ],
