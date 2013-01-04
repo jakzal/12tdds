@@ -1,9 +1,53 @@
 {
-    "hash": "4221c12bd33fc3bb23bc95fb44adbf08",
+    "hash": "50e833c1720683e6983e0dc73a6a6a06",
     "packages": [
 
     ],
     "packages-dev": [
+        {
+            "name": "bossa/phpspec2-expect",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BossaConsulting/phpspec2-expect",
+                "reference": "fe8c20b65f38f2d372bd56923621413eff7b8f17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/BossaConsulting/phpspec2-expect/archive/fe8c20b65f38f2d372bd56923621413eff7b8f17.zip",
+                "reference": "fe8c20b65f38f2d372bd56923621413eff7b8f17",
+                "shasum": ""
+            },
+            "require": {
+                "phpspec/phpspec2": "dev-develop"
+            },
+            "time": "2012-11-14 14:47:24",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "files": [
+                    "expect.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcello Duarte",
+                    "homepage": "http://marcelloduarte.net/"
+                }
+            ],
+            "description": "Helper that decorates any SUS with a phpspec2 lazy object wrapper",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "spec",
+                "SpecBDD",
+                "specification"
+            ]
+        },
         {
             "name": "mockery/mockery",
             "version": "0.7.2",
@@ -344,6 +388,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "phpspec/phpspec2": 20,
-        "phpspec/php-diff": 20
+        "phpspec/php-diff": 20,
+        "bossa/phpspec2-expect": 20
     }
 }
