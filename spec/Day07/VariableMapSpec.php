@@ -2,9 +2,9 @@
 
 namespace spec\Day07;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class VariableMap extends ObjectBehavior
+class VariableMapSpec extends ObjectBehavior
 {
     function it_should_store_variables()
     {

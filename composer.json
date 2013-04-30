@@ -1,9 +1,15 @@
 {
     "require-dev": {
-        "phpspec/phpspec2": "dev-develop@dev",
-        "phpspec/php-diff": "*@dev",
-        "bossa/phpspec2-expect": "*@dev"
+        "phpspec/phpspec": "dev-master",
+        "bossa/phpspec2-expect": "dev-phpspec-update"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jakzal/phpspec2-expect"
+        }
+    ],
+    "minimum-stability": "dev",
     "autoload": {"psr-0": {"": "src"}},
     "config": {
         "bin-dir": "bin"

@@ -2,9 +2,9 @@
 
 namespace spec\Day02;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class NumberSpeller extends ObjectBehavior
+class NumberSpellerSpec extends ObjectBehavior
 {
     function it_should_spell_ones()
     {

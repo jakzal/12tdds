@@ -2,9 +2,9 @@
 
 namespace spec\Day03;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class MineField extends ObjectBehavior
+class MineFieldSpec extends ObjectBehavior
 {
     function it_should_return_mine_location()
     {

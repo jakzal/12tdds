@@ -2,9 +2,9 @@
 
 namespace spec\Day10;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class PhoneList extends ObjectBehavior
+class PhoneListSpec extends ObjectBehavior
 {
     function it_should_act_as_an_array()
     {

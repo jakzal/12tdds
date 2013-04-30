@@ -2,9 +2,9 @@
 
 namespace spec\Day09;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class BowlingGame extends ObjectBehavior
+class BowlingGameSpec extends ObjectBehavior
 {
     function it_should_score_zero_if_no_pins_were_hit()
     {

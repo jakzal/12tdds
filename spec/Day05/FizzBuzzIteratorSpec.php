@@ -2,12 +2,11 @@
 
 namespace spec\Day05;
 
-use PHPSpec2\Exception\Example\FailureException;
-use PHPSpec2\Matcher\CustomMatchersProviderInterface;
-use PHPSpec2\Matcher\InlineMatcher;
-use PHPSpec2\ObjectBehavior;
+use Matcher\InlineMatcher;
+use PhpSpec\Exception\Example\FailureException;
+use PhpSpec\ObjectBehavior;
 
-class FizzBuzzIterator extends ObjectBehavior implements CustomMatchersProviderInterface
+class FizzBuzzIteratorSpec extends ObjectBehavior
 {
     function it_should_be_an_iterator()
     {
@@ -48,7 +47,7 @@ class FizzBuzzIterator extends ObjectBehavior implements CustomMatchersProviderI
         $this->shouldIterateWith(array(1, 2, 'a', 'b'));
     }
 
-    static public function getMatchers()
+    public function getMatchers()
     {
         return array(
             new InlineMatcher('iterateWith', function($subject, $values) {

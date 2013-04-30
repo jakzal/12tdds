@@ -2,11 +2,10 @@
 
 namespace spec\Day01;
 
-use PHPSpec2\ObjectBehavior;
-use PHPSpec2\Matcher\CustomMatchersProviderInterface;
-use PHPSpec2\Matcher\InlineMatcher;
+use Matcher\InlineMatcher;
+use PhpSpec\ObjectBehavior;
 
-class StatsCalculator extends ObjectBehavior implements CustomMatchersProviderInterface
+class StatsCalculatorSpec extends ObjectBehavior
 {
     function it_should_throw_an_exception_for_an_empty_sequence()
     {
@@ -34,7 +33,7 @@ class StatsCalculator extends ObjectBehavior implements CustomMatchersProviderIn
         $this->run(array(6, 9, 15, -2, 92, 11))->shouldContain('avg', 21.8333);
     }
 
-    static public function getMatchers()
+    public function getMatchers()
     {
         return array(
             new InlineMatcher('contain', function($subject, $key, $value) {

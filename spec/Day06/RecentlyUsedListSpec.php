@@ -2,12 +2,11 @@
 
 namespace spec\Day06;
 
-use PHPSpec2\Exception\Example\FailureException;
-use PHPSpec2\Matcher\CustomMatchersProviderInterface;
-use PHPSpec2\Matcher\InlineMatcher;
-use PHPSpec2\ObjectBehavior;
+use Matcher\InlineMatcher;
+use PhpSpec\Exception\Example\FailureException;
+use PhpSpec\ObjectBehavior;
 
-class RecentlyUsedList extends ObjectBehavior implements CustomMatchersProviderInterface
+class RecentlyUsedListSpec extends ObjectBehavior
 {
     function it_should_be_traversable()
     {
@@ -74,7 +73,7 @@ class RecentlyUsedList extends ObjectBehavior implements CustomMatchersProviderI
         $this->shouldIterateWith(array('Item 3', 'Item 2'));
     }
 
-    static public function getMatchers()
+    public function getMatchers()
     {
         return array(
             new InlineMatcher('iterateWith', function($subject, $values) {

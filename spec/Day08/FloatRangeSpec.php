@@ -2,9 +2,9 @@
 
 namespace spec\Day08;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class FloatRange extends ObjectBehavior
+class FloatRangeSpec extends ObjectBehavior
 {
     function it_should_return_true_if_a_number_lies_in_the_range()
     {

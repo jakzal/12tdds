@@ -3,9 +3,9 @@
 namespace spec\Day07;
 
 use Day07\MissingValueException;
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class TemplateEngine extends ObjectBehavior
+class TemplateEngineSpec extends ObjectBehavior
 {
     /**
      * @param Day07\VariableMap $variableMap

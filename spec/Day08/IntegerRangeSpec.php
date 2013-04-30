@@ -2,9 +2,9 @@
 
 namespace spec\Day08;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class IntegerRange extends ObjectBehavior
+class IntegerRangeSpec extends ObjectBehavior
 {
     function it_should_return_true_if_an_integer_lies_in_the_range()
     {
