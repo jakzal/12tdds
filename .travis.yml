@@ -8,4 +8,4 @@ before_script:
     - composer --prefer-source --dev install
 
 script:
-    - ./bin/phpspec run -f=pretty
+    - ./bin/phpspec run -f pretty
