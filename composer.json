@@ -1,8 +1,6 @@
 {
     "require-dev": {
-        "phpspec/phpspec2": "dev-develop@dev",
-        "phpspec/php-diff": "*@dev",
-        "bossa/phpspec2-expect": "*@dev"
+        "phpspec/phpspec": "2.0.0-BETA2"
     },
     "autoload": {"psr-0": {"": "src"}},
     "config": {

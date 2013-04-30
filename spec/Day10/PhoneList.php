@@ -11,11 +11,12 @@ class PhoneList extends ObjectBehavior
         $this->shouldBeAnInstanceOf('ArrayAccess');
 
         $this['Bob'] = '91 12 54 26';
-        expect(isset($this['Bob']))->toBe(true);
-        $this['Bob']->shouldReturn('91 12 54 26');
+        $this->offsetGet('Bob')->shouldReturn('91 12 54 26');
+
+        $this['Bob'];
+
         unset($this['Bob']);
 
-        expect(isset($this['Bob']))->toBe(false);
         $this->shouldThrow(new \InvalidArgumentException('Unknown name: "Bob"'))->duringOffsetGet('Bob');
     }
 
