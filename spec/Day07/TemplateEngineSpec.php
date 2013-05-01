@@ -12,13 +12,13 @@ class TemplateEngineSpec extends ObjectBehavior
     {
     }
 
-    function it_should_evaluate_template_without_variables($variableMap)
+    function it_evaluates_template_without_variables($variableMap)
     {
         $this->evaluate('Hello', $variableMap)
             ->shouldReturn('Hello');
     }
 
-    function it_should_evaluate_template_with_single_variable($variableMap)
+    function it_evaluates_template_with_single_variable($variableMap)
     {
         $variableMap->get('name')->willReturn('Kuba')->shouldBeCalled();
 
@@ -26,7 +26,7 @@ class TemplateEngineSpec extends ObjectBehavior
             ->shouldReturn('Hello Kuba');
     }
 
-    function it_should_evaluate_template_with_mutliple_variables($variableMap)
+    function it_evaluates_template_with_mutliple_variables($variableMap)
     {
         $variableMap->get('firstName')->willReturn('Chuck')->shouldBeCalled();
         $variableMap->get('lastName')->willReturn('Norris')->shouldBeCalled();
@@ -35,7 +35,7 @@ class TemplateEngineSpec extends ObjectBehavior
             ->shouldReturn('Hello Chuck Norris');
     }
 
-    function it_should_give_error_if_variable_does_not_exist_in_the_map($variableMap)
+    function it_gives_error_if_variable_does_not_exist_in_the_map($variableMap)
     {
         $variableMap->get('name')->willReturn(null);
 
@@ -43,7 +43,7 @@ class TemplateEngineSpec extends ObjectBehavior
             ->duringEvaluate('Hello {$name}', $variableMap);
     }
 
-    function it_should_evaluate_complex_cases($variableMap)
+    function it_evaluates_complex_cases($variableMap)
     {
         $variableMap->get('name')->willReturn('Kuba');
 
