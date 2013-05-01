@@ -11,8 +11,8 @@ class PhoneListSpec extends ObjectBehavior
         $this->shouldBeAnInstanceOf('ArrayAccess');
 
         $this['Bob'] = '91 12 54 26';
-        expect(isset($this['Bob']))->toBe(true);
         $this['Bob']->shouldReturn('91 12 54 26');
+        expect(isset($this['Bob']))->toBe(true);
         unset($this['Bob']);
 
         expect(isset($this['Bob']))->toBe(false);

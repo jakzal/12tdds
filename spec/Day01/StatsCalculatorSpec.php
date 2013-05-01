@@ -2,7 +2,6 @@
 
 namespace spec\Day01;
 
-use Matcher\InlineMatcher;
 use PhpSpec\ObjectBehavior;
 
 class StatsCalculatorSpec extends ObjectBehavior
@@ -36,9 +35,9 @@ class StatsCalculatorSpec extends ObjectBehavior
     public function getMatchers()
     {
         return array(
-            new InlineMatcher('contain', function($subject, $key, $value) {
+            'contain' => function($subject, $key, $value) {
                 return array_key_exists($key, $subject) && $subject[$key] === $value;
-            })
+            }
         );
     }
 }

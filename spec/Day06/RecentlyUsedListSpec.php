@@ -2,7 +2,6 @@
 
 namespace spec\Day06;
 
-use Matcher\InlineMatcher;
 use PhpSpec\Exception\Example\FailureException;
 use PhpSpec\ObjectBehavior;
 
@@ -76,7 +75,7 @@ class RecentlyUsedListSpec extends ObjectBehavior
     public function getMatchers()
     {
         return array(
-            new InlineMatcher('iterateWith', function($subject, $values) {
+            'iterateWith' => function($subject, $values) {
                 foreach ($subject as $key => $value) {
                     if ($value !== $values[$key]) {
 
@@ -85,7 +84,7 @@ class RecentlyUsedListSpec extends ObjectBehavior
                 }
 
                 return true;
-            })
+            }
         );
     }
 }

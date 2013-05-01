@@ -92,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "6e4e82f796f4efe761bf06762e702d5ed92be3dc"
+                "reference": "2.0.0-BETA3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/6e4e82f796f4efe761bf06762e702d5ed92be3dc",
-                "reference": "6e4e82f796f4efe761bf06762e702d5ed92be3dc",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/2.0.0-BETA3",
+                "reference": "2.0.0-BETA3",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2013-04-30 12:42:35"
+            "time": "2013-05-01 08:58:11"
         },
         {
             "name": "phpspec/prophecy",
@@ -364,12 +364,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "f198ac28048eeceae852419c076123aaee59cd1c"
+                "reference": "9df18a254f3ce79ca2a096bed959ace4cbf75261"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f198ac28048eeceae852419c076123aaee59cd1c",
-                "reference": "f198ac28048eeceae852419c076123aaee59cd1c",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9df18a254f3ce79ca2a096bed959ace4cbf75261",
+                "reference": "9df18a254f3ce79ca2a096bed959ace4cbf75261",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-01-31 21:39:01"
+            "time": "2013-04-21 12:26:17"
         }
     ],
     "aliases": [

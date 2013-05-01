@@ -2,7 +2,6 @@
 
 namespace spec\Day05;
 
-use Matcher\InlineMatcher;
 use PhpSpec\Exception\Example\FailureException;
 use PhpSpec\ObjectBehavior;
 
@@ -50,7 +49,7 @@ class FizzBuzzIteratorSpec extends ObjectBehavior
     public function getMatchers()
     {
         return array(
-            new InlineMatcher('iterateWith', function($subject, $values) {
+            'iterateWith' => function($subject, $values) {
                 foreach ($subject as $key => $value) {
                     if ($value !== $values[$key]) {
 
@@ -59,7 +58,7 @@ class FizzBuzzIteratorSpec extends ObjectBehavior
                 }
 
                 return true;
-            })
+            }
         );
     }
 }
