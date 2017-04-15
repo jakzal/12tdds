@@ -6,21 +6,21 @@ use PhpSpec\ObjectBehavior;
 
 class BowlingGameSpec extends ObjectBehavior
 {
-    function it_should_score_zero_if_no_pins_were_hit()
+    function it_scores_zero_if_no_pins_are_hit()
     {
         $this->rollMany(20, 0);
 
         $this->calculateScore()->shouldReturn(0);
     }
 
-    function it_should_get_point_for_each_hit_pin()
+    function it_gets_point_for_each_pin_hit()
     {
         $this->rollMany(20, 1);
 
         $this->calculateScore()->shouldReturn(20);
     }
 
-    function it_should_add_a_bonus_on_spare()
+    function it_adds_a_bonus_on_spare()
     {
         $this->rollSpare();
         $this->roll(3);
@@ -29,7 +29,7 @@ class BowlingGameSpec extends ObjectBehavior
         $this->calculateScore()->shouldReturn(16);
     }
 
-    function it_should_add_a_bonus_on_strike()
+    function it_adds_a_bonus_on_strike()
     {
         $this->rollStrike();
         $this->roll(3);
@@ -39,7 +39,7 @@ class BowlingGameSpec extends ObjectBehavior
         $this->calculateScore()->shouldReturn(24);
     }
 
-    function it_should_allow_two_bonus_rolls_when_strike_occured_in_the_last_roll()
+    function it_allows_two_bonus_rolls_when_strike_occured_in_the_last_roll()
     {
         $this->rollMany(12, 10);
 
