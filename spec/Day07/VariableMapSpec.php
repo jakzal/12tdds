@@ -6,7 +6,7 @@ use PhpSpec\ObjectBehavior;
 
 class VariableMapSpec extends ObjectBehavior
 {
-    function it_should_store_variables()
+    function it_stores_variables()
     {
         $this->put('firstName', 'Chuck');
         $this->put('lastName', 'Norris');
@@ -15,7 +15,7 @@ class VariableMapSpec extends ObjectBehavior
         $this->get('lastName')->shouldReturn('Norris');
     }
 
-    function it_should_return_null_for_unknown_variable()
+    function it_returns_null_for_unknown_variable()
     {
         $this->get('name')->shouldReturn(null);
     }
