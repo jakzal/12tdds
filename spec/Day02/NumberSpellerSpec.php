@@ -6,7 +6,7 @@ use PhpSpec\ObjectBehavior;
 
 class NumberSpellerSpec extends ObjectBehavior
 {
-    function it_should_spell_ones()
+    function it_spells_units()
     {
         $numbers = array(
             0 => 'zero',
@@ -26,7 +26,7 @@ class NumberSpellerSpec extends ObjectBehavior
         }
     }
 
-    function it_should_spell_tens()
+    function it_spells_teens_and_tens()
     {
         $numbers = array(
             10 => 'ten',
@@ -57,7 +57,7 @@ class NumberSpellerSpec extends ObjectBehavior
         }
     }
 
-    function it_should_spell_hundreds()
+    function it_spells_hundreds()
     {
         $numbers = array(
             100 => 'one hundred',
@@ -72,7 +72,7 @@ class NumberSpellerSpec extends ObjectBehavior
         }
     }
 
-    function it_should_spell_thousands()
+    function it_spells_thousands()
     {
         $numbers = array(
             1000 => 'one thousand',
@@ -93,7 +93,7 @@ class NumberSpellerSpec extends ObjectBehavior
         }
     }
 
-    function it_should_spell_millions()
+    function it_spells_millions()
     {
         $numbers = array(
             1000000 => 'one million',
