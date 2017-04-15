@@ -7,7 +7,7 @@ use PhpSpec\ObjectBehavior;
 
 class RecentlyUsedListSpec extends ObjectBehavior
 {
-    function it_should_be_traversable()
+    function it_is_traversable()
     {
         $this->shouldBeAnInstanceOf('Traversable');
     }
@@ -17,7 +17,7 @@ class RecentlyUsedListSpec extends ObjectBehavior
         $this->count()->shouldReturn(0);
     }
 
-    function it_should_add_most_recent_item_first()
+    function it_adds_most_recent_item_first()
     {
         $this->add('Item 1');
         $this->add('Item 2');
@@ -27,7 +27,7 @@ class RecentlyUsedListSpec extends ObjectBehavior
         $this->shouldIterateWith(array('Item 3', 'Item 2', 'Item 1'));
     }
 
-    function it_should_retrieve_item_by_index()
+    function it_retrieves_item_by_index()
     {
         $this->add('Item 1');
         $this->add('Item 2');
@@ -39,12 +39,12 @@ class RecentlyUsedListSpec extends ObjectBehavior
         $this->getAt(2)->shouldReturn('Item 1');
     }
 
-    function it_should_complain_if_requested_item_is_not_there()
+    function it_complains_if_requested_item_is_not_there()
     {
         $this->shouldThrow(new \InvalidArgumentException('Item at index "0" does not exist'))->duringGetAt(0);
     }
 
-    function it_should_move_duplicate_item()
+    function it_removes_duplicate_item()
     {
         $this->add('Item 1');
         $this->add('Item 2');
@@ -55,12 +55,12 @@ class RecentlyUsedListSpec extends ObjectBehavior
         $this->shouldIterateWith(array('Item 2', 'Item 3', 'Item 1'));
     }
 
-    function it_should_not_accept_empty_item()
+    function it_does_not_accept_empty_item()
     {
         $this->shouldThrow(new \InvalidArgumentException('Item cannot be empty'))->duringAdd('');
     }
 
-    function it_should_drop_items_if_capacity_is_specified()
+    function it_drops_items_if_capacity_is_specified()
     {
         $this->beConstructedWith(2);
 
