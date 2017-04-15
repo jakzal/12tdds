@@ -6,7 +6,7 @@ use PhpSpec\ObjectBehavior;
 
 class PhoneListSpec extends ObjectBehavior
 {
-    function it_should_act_as_an_array()
+    function it_acts_as_an_array()
     {
         $this->shouldBeAnInstanceOf('ArrayAccess');
 
@@ -19,12 +19,12 @@ class PhoneListSpec extends ObjectBehavior
         $this->shouldThrow(new \InvalidArgumentException('Unknown name: "Bob"'))->duringOffsetGet('Bob');
     }
 
-    function it_should_be_consistent_if_empty()
+    function it_is_consistent_if_empty()
     {
         $this->isConsistent()->shouldReturn(true);
     }
 
-    function it_should_be_consistent_if_no_number_is_a_prefix_of_another_one()
+    function it_is_consistent_if_no_number_is_a_prefix_of_another_one()
     {
         $this['Bob'] = '91 12 54 26';
         $this['Alice'] = '97 625 992';
@@ -33,7 +33,7 @@ class PhoneListSpec extends ObjectBehavior
         $this->isConsistent()->shouldReturn(true);
     }
 
-    function it_should_not_be_consistent_if_a_number_is_a_prefix_of_another_one()
+    function it_is_not_consistent_if_a_number_is_a_prefix_of_another_one()
     {
         $this['Bob'] = '91 12 54 26';
         $this['Alice'] = '97 625 992';
