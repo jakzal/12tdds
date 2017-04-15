@@ -6,7 +6,7 @@ use PhpSpec\ObjectBehavior;
 
 class FloatRangeSpec extends ObjectBehavior
 {
-    function it_should_return_true_if_a_number_lies_in_the_range()
+    function it_returns_true_if_a_number_lies_in_the_range()
     {
         $this->beConstructedWith(0, 10.75);
 
@@ -15,14 +15,14 @@ class FloatRangeSpec extends ObjectBehavior
         $this->belongs(10.75)->shouldReturn(true);
     }
 
-    function it_should_return_false_if_a_number_lies_outside_of_the_range()
+    function it_returns_false_if_a_number_lies_outside_of_the_range()
     {
         $this->beConstructedWith(0, 10.5);
 
         $this->belongs(11)->shouldReturn(false);
     }
 
-    function it_should_calculate_intersection_of_two_ranges()
+    function it_calculates_intersection_of_two_ranges()
     {
         $this->beConstructedWith(0.5, 3.5);
 
@@ -33,7 +33,7 @@ class FloatRangeSpec extends ObjectBehavior
         $range->getHighestNumber()->shouldReturn(3.5);
     }
 
-    function it_should_calculate_intersection_of_one_element_set()
+    function it_calculates_intersection_of_one_element_set()
     {
         $this->beConstructedWith(0.5, 3.5);
 
@@ -44,21 +44,21 @@ class FloatRangeSpec extends ObjectBehavior
         $range->getHighestNumber()->shouldReturn(3.5);
     }
 
-    function it_should_return_null_if_there_is_no_intersection()
+    function it_returns_null_if_there_is_no_intersection()
     {
         $this->beConstructedWith(0, 3.5);
 
         $range = $this->intersect($this->createRange(3.6, 5))->shouldReturn(null);
     }
 
-    function it_should_throw_exception_if_lowest_number_is_higher_than_highest()
+    function it_throws_exception_if_lowest_number_is_higher_than_highest()
     {
         $exception = new \InvalidArgumentException('Lowest number cannot be higher than the highest number');
 
         $this->shouldThrow($exception)->during('__construct', array(2.6, 2.5));
     }
 
-    function it_should_only_work_with_numbers()
+    function it_only_works_with_numbers()
     {
         $exception = new \InvalidArgumentException('Only numbers are supported');
 
